@@ -1,8 +1,7 @@
 use std::fs;
 
 // Answer to Part 1
-
-fn main() {
+fn part_1() {
     let string_data = fs::read_to_string("src/input.txt").expect("file not found");
     let split: Vec<&str> = string_data.split("\r\n").collect();
     let first_value = split[0].parse::<i32>().unwrap();
@@ -14,9 +13,17 @@ fn main() {
         if current_value > previous_value {
             increase_count += 1;
         }
-
         previous_value = current_value;
     }
 
     println!("THIS IS INCREASE COUNT {}", increase_count);
+}
+
+fn part_2() {
+
+}
+
+fn main() {
+    part_1();
+    part_2();
 }
